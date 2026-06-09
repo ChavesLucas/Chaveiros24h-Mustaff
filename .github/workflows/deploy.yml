@@ -32,3 +32,4 @@ jobs:
           port: 21
           local-dir: ./dist/public/
           server-dir: /domains/mustaffchaveirosp.com.br/public_html/
+          dangerous-clean-slate: true
