@@ -6,7 +6,6 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-pink-950 text-white border-t border-pink-900">
-      {/* Faixa de Destaque / Garantia */}
       <div className="bg-pink-400 text-pink-950 py-6">
         <div className="container grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
           <div className="flex flex-col md:flex-row items-center gap-3 justify-center md:justify-start">
@@ -39,9 +38,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Links e Conteúdo Principal */}
       <div className="container py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Coluna 1: Sobre */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-400 font-black text-pink-950">
@@ -52,53 +49,47 @@ export default function Footer() {
                 LABZ<span className="text-pink-400">SERVIÇOS</span>
               </span>
               <span className="text-[10px] font-bold uppercase tracking-widest text-pink-400/80 leading-none mt-0.5">
-                24 Horas
+                Chaveiro 24h
               </span>
             </div>
           </div>
           <p className="text-sm text-pink-200 leading-relaxed">
-            Serviços residenciais, comerciais e emergenciais com rapidez, confiança e solução imediata. Atendimento 24 horas por dia, 7 dias por semana.
+            Chaveiro especializado em fechaduras eletrônicas, troca de miolos, chaves automotivas e abertura residencial com atendimento imediato.
           </p>
         </div>
 
-        {/* Coluna 2: Nossos Serviços / LPs */}
         <div className="flex flex-col gap-4">
-          <h4 className="text-base font-black uppercase tracking-wider text-pink-400">
-            Nossos Serviços
-          </h4>
+          <h4 className="text-base font-black uppercase tracking-wider text-pink-400">Navegação</h4>
           <ul className="grid grid-cols-1 gap-2 text-sm text-pink-200">
             <li>
-              <a href="/chaveiro-24h" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
+              <a href="#servicos" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-pink-400"></span>
-                Chaveiro 24 Horas
+                Serviços
               </a>
             </li>
             <li>
-              <a href="/eletricista-hidraulica" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
+              <a href="#galeria" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-pink-400"></span>
-                Elétrica & Hidráulica
+                Galeria
               </a>
             </li>
             <li>
-              <a href="/marido-de-aluguel" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
+              <a href="#como-funciona" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-pink-400"></span>
-                Marido de Aluguel
+                Como Funciona
               </a>
             </li>
             <li>
-              <a href="/reformas-alvenaria" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
+              <a href="#contato" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-pink-400"></span>
-                Reformas & Alvenaria
+                Contato
               </a>
             </li>
           </ul>
         </div>
 
-        {/* Coluna 3: Contato */}
         <div className="flex flex-col gap-4">
-          <h4 className="text-base font-black uppercase tracking-wider text-pink-400">
-            Fale Conosco
-          </h4>
+          <h4 className="text-base font-black uppercase tracking-wider text-pink-400">Fale Conosco</h4>
           <div className="flex flex-col gap-3 text-sm text-pink-200">
             <a
               href={LABZ_WHATSAPP_LINK}
@@ -124,13 +115,10 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Direitos Autorais */}
       <div className="bg-pink-950 border-t border-pink-900/60 py-6 text-center text-xs text-blue-300">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© {currentYear} LabzServiços 24 Horas. Todos os direitos reservados.</p>
-          <p className="text-[10px] text-blue-400">
-            Soluções Rápidas e Seguras para sua Casa ou Empresa.
-          </p>
+          <p className="text-[10px] text-blue-400">Chaveiro especializado em porta e carro com atendimento 24h.</p>
         </div>
       </div>
     </footer>
