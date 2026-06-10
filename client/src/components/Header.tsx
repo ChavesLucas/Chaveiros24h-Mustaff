@@ -1,10 +1,10 @@
-import { KeyRound, MessageSquare, Phone } from "lucide-react";
+import { MessageSquare, Phone } from "lucide-react";
 import { MUSTAFF_BRAND, MUSTAFF_PHONE, MUSTAFF_WHATSAPP_LINK } from "../const";
 
 const navItems = [
+  { href: "#emergencia", label: "Abertura emergencial" },
   { href: "#servicos", label: "Serviços" },
   { href: "#fechaduras-eletronicas", label: "Fechaduras eletrônicas" },
-  { href: "#diferenciais", label: "Diferenciais" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -15,8 +15,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl">
       <div className="container flex h-20 items-center justify-between gap-5">
         <a href="#" className="flex items-center gap-3" aria-label="Voltar ao início">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-amber-300 shadow-lg shadow-slate-950/10">
-            <KeyRound className="h-6 w-6" />
+          <div className="h-12 w-12 overflow-hidden rounded-2xl border-2 border-amber-300 bg-white shadow-lg shadow-slate-950/10">
+            <img
+              src="/mustaff-assets/mascote-mustaff-chaveiro-24h.webp"
+              alt="Mascote Mustaff Chaveiro 24H"
+              className="h-full w-full object-cover"
+            />
           </div>
           <div className="flex flex-col leading-none">
             <span className="text-lg md:text-xl font-black tracking-tight text-slate-950">Mustaff</span>
@@ -45,10 +49,10 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Chamar ${MUSTAFF_BRAND} no WhatsApp`}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white shadow-lg shadow-slate-950/15 transition-all hover:bg-slate-800 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-black text-white shadow-lg shadow-emerald-700/25 transition-all hover:bg-[#128C7E] hover:-translate-y-0.5"
           >
-            <MessageSquare className="h-4 w-4 text-amber-300" />
-            <span className="hidden sm:inline">WhatsApp</span>
+            <MessageSquare className="h-4 w-4 text-white" />
+            <span className="hidden sm:inline">Emergência 24h</span>
             <span className="sm:hidden">Chamar</span>
           </a>
         </div>

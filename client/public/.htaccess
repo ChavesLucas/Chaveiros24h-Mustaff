@@ -1,12 +1,23 @@
+DirectoryIndex index.html index.htm index.php
+Options -MultiViews
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  
-  # Se o arquivo ou diretório solicitado existir fisicamente, acesse diretamente
+
+  # Se o arquivo ou diretório solicitado existir fisicamente, acesse diretamente.
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
-  
-  # Caso contrário, redirecione todas as outras requisições para o index.html (Roteamento do React/Wouter)
+
+  # Em rotas internas do React, entregue sempre o index.html.
   RewriteRule ^ index.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "^index\.html$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
 </IfModule>

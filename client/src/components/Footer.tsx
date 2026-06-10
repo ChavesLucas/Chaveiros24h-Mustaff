@@ -2,9 +2,9 @@ import { KeyRound, MapPin, MessageSquare, Phone, ShieldCheck } from "lucide-reac
 import { MUSTAFF_BRAND, MUSTAFF_PHONE, MUSTAFF_WHATSAPP_LINK } from "../const";
 
 const footerServices = [
+  "Abertura emergencial",
   "Fechaduras eletrônicas",
   "Troca de fechaduras",
-  "Abertura de portas",
   "Abertura veicular",
   "Chaves codificadas",
   "Reforço de segurança",
@@ -36,8 +36,12 @@ export default function Footer() {
       <div className="container py-12 grid grid-cols-1 lg:grid-cols-3 gap-10">
         <div>
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-300 text-slate-950">
-              <KeyRound className="h-6 w-6" />
+            <div className="h-12 w-12 overflow-hidden rounded-2xl border-2 border-amber-300 bg-white">
+              <img
+                src="/mustaff-assets/mascote-mustaff-chaveiro-24h.webp"
+                alt="Mascote Mustaff Chaveiro 24H"
+                className="h-full w-full object-cover"
+              />
             </div>
             <div>
               <p className="text-xl font-black leading-none">Mustaff</p>
@@ -64,9 +68,9 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-black uppercase tracking-[0.2em] text-amber-300">Contato imediato</h4>
           <div className="mt-5 flex flex-col gap-3 text-sm text-slate-300">
-            <a href={MUSTAFF_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 transition-colors hover:text-amber-300">
-              <MessageSquare className="h-4 w-4 text-amber-300" />
-              Chamar no WhatsApp
+            <a href={MUSTAFF_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-5 py-3 font-black text-white shadow-lg shadow-emerald-700/20 transition-colors hover:bg-[#128C7E]">
+              <MessageSquare className="h-4 w-4 text-white" />
+              Emergência pelo WhatsApp
             </a>
             <a href={`tel:${telLink}`} className="flex items-center gap-3 transition-colors hover:text-amber-300">
               <Phone className="h-4 w-4 text-amber-300" />

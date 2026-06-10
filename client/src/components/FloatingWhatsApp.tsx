@@ -8,10 +8,10 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Falar com ${MUSTAFF_BRAND} pelo WhatsApp`}
-      className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-4 text-sm font-black text-white shadow-2xl shadow-emerald-700/25 transition-all duration-300 hover:-translate-y-1 hover:bg-[#128C7E] active:translate-y-0 md:bottom-7 md:right-7"
+      className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-4 text-sm font-black text-white shadow-2xl shadow-emerald-700/30 ring-4 ring-emerald-400/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#128C7E] active:translate-y-0 md:bottom-7 md:right-7"
     >
       <MessageSquare className="h-5 w-5" />
-      <span className="hidden sm:inline">WhatsApp 24h</span>
+      <span className="hidden sm:inline">Abertura emergencial</span>
     </a>
   );
 }

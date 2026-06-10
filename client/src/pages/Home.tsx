@@ -42,12 +42,12 @@ const serviceCards = [
     highlight: "Troca segura",
   },
   {
-    title: "Abertura de Portas",
+    title: "Abertura Emergencial de Portas",
     description:
-      "Abertura profissional com ferramentas adequadas para preservar porta, batente e fechadura sempre que tecnicamente possível.",
+      "Atendimento emergencial para abertura de casas, apartamentos e escritórios com técnica para preservar porta, batente e fechadura sempre que possível.",
     items: ["Casas", "Apartamentos", "Escritórios"],
     icon: DoorOpen,
-    highlight: "Sem danos",
+    highlight: "Emergência 24h",
   },
   {
     title: "Abertura Veicular",
@@ -97,7 +97,7 @@ const differentials = [
   "Atendimento 24 horas, inclusive finais de semana e feriados",
   "Foco total em serviços de chaveiro residencial, comercial e automotivo",
   "Instalação e configuração de fechaduras eletrônicas modernas",
-  "Abertura técnica com prioridade para preservar portas e veículos",
+      "Abertura emergencial 24h com prioridade para preservar portas e veículos",
   "Orientação clara para aumentar a segurança do imóvel",
   "Atendimento rápido em São Paulo e região metropolitana",
 ];
@@ -135,15 +135,15 @@ export default function Home() {
             <div className="lg:col-span-7 flex flex-col gap-7 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 self-center lg:self-start rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-amber-200">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.9)]" />
-                Plantão 24h para emergências
+                Abertura emergencial 24H
               </div>
 
               <div className="space-y-5">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.94]">
-                  Mustaff Chaveiro 24H para portas, veículos e fechaduras eletrônicas.
+                  Abertura Emergencial 24H com chaveiro profissional em São Paulo.
                 </h1>
                 <p className="text-base md:text-xl text-slate-200 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Atendimento especializado em abertura de portas, abertura veicular, troca de fechaduras, chaves codificadas e reforço de segurança com acabamento profissional e resposta rápida.
+                  Mustaff Chaveiro 24H resolve abertura de portas, abertura veicular, troca de fechaduras, chaves codificadas e reforço de segurança com resposta rápida, acabamento profissional e atendimento direto pelo WhatsApp.
                 </p>
               </div>
 
@@ -152,10 +152,10 @@ export default function Home() {
                   href={MUSTAFF_WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-amber-300 px-8 py-4 text-base font-black text-slate-950 shadow-2xl shadow-amber-500/20 transition-all duration-200 hover:bg-amber-200 hover:-translate-y-0.5 active:translate-y-0"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 py-4 text-base font-black text-white shadow-2xl shadow-emerald-700/25 transition-all duration-200 hover:bg-[#128C7E] hover:-translate-y-0.5 active:translate-y-0"
                 >
                   <MessageSquare className="h-5 w-5" />
-                  Chamar no WhatsApp
+                  Pedir abertura emergencial
                 </a>
                 <a
                   href={`tel:${telLink}`}
@@ -192,6 +192,17 @@ export default function Home() {
                     className="h-[360px] md:h-[520px] w-full rounded-[1.5rem] object-cover"
                     loading="eager"
                   />
+                  <div className="absolute right-5 top-5 flex items-center gap-3 rounded-2xl border border-amber-200/40 bg-white/92 p-3 pr-4 text-slate-950 shadow-2xl backdrop-blur">
+                    <img
+                      src="/mustaff-assets/mascote-mustaff-chaveiro-24h.webp"
+                      alt="Mascote da Mustaff Chaveiro 24H"
+                      className="h-16 w-16 rounded-xl object-cover"
+                    />
+                    <div className="hidden sm:block">
+                      <p className="text-[10px] font-black uppercase tracking-[0.18em] text-emerald-700">Plantão ativo</p>
+                      <p className="text-sm font-black">Abertura 24H</p>
+                    </div>
+                  </div>
                   <div className="absolute left-6 right-6 bottom-6 rounded-2xl border border-white/20 bg-slate-950/82 p-4 text-left shadow-xl backdrop-blur-md">
                     <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-300">Fechaduras eletrônicas</p>
                     <p className="mt-1 text-sm text-slate-100">Instalação, configuração, troca e manutenção em modelos modernos.</p>
@@ -199,6 +210,36 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="emergencia" className="relative overflow-hidden bg-amber-300 py-8 text-slate-950">
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-white/20 blur-3xl" />
+          <div className="container relative z-10 grid grid-cols-1 gap-6 md:grid-cols-[auto_1fr_auto] md:items-center">
+            <div className="mx-auto h-24 w-24 overflow-hidden rounded-3xl border-4 border-white bg-white shadow-xl md:mx-0">
+              <img
+                src="/mustaff-assets/mascote-mustaff-chaveiro-24h.webp"
+                alt="Mascote Mustaff Chaveiro 24H em atendimento emergencial"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-slate-800">Abertura emergencial em destaque</p>
+              <h2 className="mt-2 text-3xl font-black tracking-tight md:text-5xl">Porta travou? Chave quebrou? Carro fechado?</h2>
+              <p className="mt-3 max-w-3xl text-sm font-semibold leading-relaxed text-slate-800 md:text-base">
+                Chame a Mustaff para abertura emergencial 24h em casas, apartamentos, escritórios e veículos, com atendimento rápido e técnica para evitar danos.
+              </p>
+            </div>
+            <a
+              href={MUSTAFF_WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-7 py-4 text-base font-black text-white shadow-2xl shadow-emerald-700/30 transition-all hover:-translate-y-0.5 hover:bg-[#128C7E]"
+            >
+              <MessageSquare className="h-5 w-5" />
+              Atendimento emergencial
+            </a>
           </div>
         </section>
 
@@ -213,8 +254,8 @@ export default function Home() {
               <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Especialidades</p>
             </div>
             <div className="rounded-2xl bg-slate-50 p-4 border border-slate-100">
-              <p className="text-2xl font-black text-slate-950">Sem danos</p>
-              <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Técnica correta</p>
+                  <p className="text-2xl font-black text-slate-950">Emergencial</p>
+                  <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Abertura rápida</p>
             </div>
             <div className="rounded-2xl bg-slate-50 p-4 border border-slate-100">
               <p className="text-2xl font-black text-slate-950">SP</p>
@@ -234,7 +275,7 @@ export default function Home() {
                 Soluções completas para acesso, fechaduras e segurança.
               </h2>
               <p className="mt-5 text-base md:text-lg leading-relaxed text-slate-600">
-                A landing page foi reorganizada para apresentar apenas serviços de chaveiro, com foco em urgência, clareza, confiança e conversão pelo WhatsApp.
+                Serviços organizados para quem precisa de resposta rápida, orientação clara, execução segura e contato direto pelo WhatsApp.
               </p>
             </div>
 
@@ -397,10 +438,10 @@ export default function Home() {
                   href={MUSTAFF_WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex flex-1 items-center justify-center gap-3 rounded-full bg-amber-300 px-6 py-4 font-black text-slate-950 transition-colors hover:bg-amber-200"
+                  className="inline-flex flex-1 items-center justify-center gap-3 rounded-full bg-[#25D366] px-6 py-4 font-black text-white shadow-lg shadow-emerald-700/20 transition-colors hover:bg-[#128C7E]"
                 >
                   <MessageSquare className="h-5 w-5" />
-                  WhatsApp
+                  WhatsApp emergencial
                 </a>
                 <a
                   href={`tel:${telLink}`}
@@ -453,10 +494,10 @@ export default function Home() {
                 href={MUSTAFF_WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-amber-300 px-9 py-4 text-base font-black text-slate-950 shadow-xl shadow-amber-500/20 transition-all hover:bg-amber-200 hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-9 py-4 text-base font-black text-white shadow-xl shadow-emerald-700/25 transition-all hover:bg-[#128C7E] hover:-translate-y-0.5"
               >
                 <MessageSquare className="h-5 w-5" />
-                Chamar no WhatsApp
+                Chamar emergência 24h
               </a>
               <a
                 href={`tel:${telLink}`}
