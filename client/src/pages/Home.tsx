@@ -1,283 +1,474 @@
-import { MessageSquare, Phone, ShieldCheck, Clock, MapPin, CheckCircle } from "lucide-react";
-import { NICHES, LABZ_PHONE, LABZ_WHATSAPP_LINK } from "../const";
+import {
+  BadgeCheck,
+  Building2,
+  Car,
+  CheckCircle2,
+  Clock3,
+  DoorOpen,
+  Home as HomeIcon,
+  KeyRound,
+  LockKeyhole,
+  MapPin,
+  MessageSquare,
+  Phone,
+  RefreshCw,
+  Settings,
+  ShieldCheck,
+  ShieldPlus,
+  Sparkles,
+  Star,
+  Wrench,
+} from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CoverageSearch from "../components/CoverageSearch";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
-import ServicesBox from "../components/ServicesBox";
+import { MUSTAFF_PHONE, MUSTAFF_WHATSAPP_LINK } from "../const";
+
+const serviceCards = [
+  {
+    title: "Fechaduras Eletrônicas",
+    description:
+      "Especialistas em fechaduras digitais, biométricas, smart locks e modelos de alto padrão para residências, condomínios e empresas.",
+    items: ["Instalação", "Configuração", "Troca", "Manutenção"],
+    icon: LockKeyhole,
+    highlight: "Smart locks",
+  },
+  {
+    title: "Troca de Fechaduras",
+    description:
+      "Substituição técnica de fechaduras, miolos e conjuntos completos com recomendação do modelo ideal para cada porta.",
+    items: ["Residenciais", "Comerciais", "Alta segurança"],
+    icon: RefreshCw,
+    highlight: "Troca segura",
+  },
+  {
+    title: "Abertura de Portas",
+    description:
+      "Abertura profissional com ferramentas adequadas para preservar porta, batente e fechadura sempre que tecnicamente possível.",
+    items: ["Casas", "Apartamentos", "Escritórios"],
+    icon: DoorOpen,
+    highlight: "Sem danos",
+  },
+  {
+    title: "Abertura Veicular",
+    description:
+      "Atendimento automotivo para destravamento de veículos com técnica, agilidade e cuidado com acabamento interno e externo.",
+    items: ["Carros nacionais", "Importados", "Sem danos"],
+    icon: Car,
+    highlight: "Auto 24h",
+  },
+  {
+    title: "Chaves Codificadas",
+    description:
+      "Soluções para chaves automotivas e sistemas codificados, incluindo cópia, programação e orientação técnica.",
+    items: ["Programação", "Cópias", "Chaves presenciais"],
+    icon: KeyRound,
+    highlight: "Codificação",
+  },
+  {
+    title: "Reforço de Segurança",
+    description:
+      "Melhoria do nível de proteção do imóvel com cilindros, travas adicionais e fechaduras de alta segurança.",
+    items: ["Troca de cilindros", "Travas extras", "Fechaduras de alta segurança"],
+    icon: ShieldPlus,
+    highlight: "Proteção extra",
+  },
+];
+
+const processSteps = [
+  {
+    title: "Contato imediato",
+    description:
+      "Você chama pelo WhatsApp, informa o endereço e envia fotos ou detalhes do problema para agilizar o diagnóstico.",
+  },
+  {
+    title: "Orientação e orçamento",
+    description:
+      "A equipe confirma o tipo de serviço, explica a solução indicada e informa o orçamento com transparência antes do deslocamento.",
+  },
+  {
+    title: "Execução profissional",
+    description:
+      "O chaveiro chega equipado, executa o serviço com segurança e testa o funcionamento antes de finalizar o atendimento.",
+  },
+];
+
+const differentials = [
+  "Atendimento 24 horas, inclusive finais de semana e feriados",
+  "Foco total em serviços de chaveiro residencial, comercial e automotivo",
+  "Instalação e configuração de fechaduras eletrônicas modernas",
+  "Abertura técnica com prioridade para preservar portas e veículos",
+  "Orientação clara para aumentar a segurança do imóvel",
+  "Atendimento rápido em São Paulo e região metropolitana",
+];
+
+const testimonials = [
+  {
+    name: "Marina A.",
+    text:
+      "Instalaram a fechadura eletrônica do meu apartamento e configuraram senha, tag e aplicativo. Atendimento muito cuidadoso.",
+  },
+  {
+    name: "Eduardo R.",
+    text:
+      "Precisei abrir o carro de madrugada e resolveram sem dano nenhum. Chegaram rápido e explicaram tudo com clareza.",
+  },
+  {
+    name: "Fernanda C.",
+    text:
+      "Trocaram cilindros e reforçaram a porta do escritório. Serviço limpo, profissional e com ótimo acabamento.",
+  },
+];
+
+const telLink = MUSTAFF_PHONE.replace(/[^\d]/g, "");
 
 export default function Home() {
-  const niche = NICHES["chaveiro-24h"];
-
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-pink-950 font-sans antialiased selection:bg-pink-400 selection:text-pink-950">
+    <div className="min-h-screen flex flex-col bg-[#f7f4ee] text-slate-950 font-sans antialiased selection:bg-amber-300 selection:text-slate-950">
       <Header />
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-pink-950 to-pink-900 text-white py-16 md:py-24 lg:py-28 border-b-4 border-pink-400">
-        <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
-        <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 flex flex-col gap-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 self-center lg:self-start rounded-full bg-pink-400/10 border border-pink-400/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-pink-400">
-              <span className="h-2 w-2 rounded-full bg-pink-400 animate-pulse"></span>
-              Chaveiro 24h especializado
+      <main className="flex-1">
+        <section className="relative overflow-hidden bg-slate-950 text-white">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.20),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(15,118,110,0.22),transparent_36%)]" />
+          <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(90deg,#fff_1px,transparent_1px),linear-gradient(180deg,#fff_1px,transparent_1px)] [background-size:44px_44px]" />
+          <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-16 pb-14 md:pt-24 md:pb-20">
+            <div className="lg:col-span-7 flex flex-col gap-7 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 self-center lg:self-start rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-amber-200">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.9)]" />
+                Plantão 24h para emergências
+              </div>
+
+              <div className="space-y-5">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.94]">
+                  Mustaff Chaveiro 24H para portas, veículos e fechaduras eletrônicas.
+                </h1>
+                <p className="text-base md:text-xl text-slate-200 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  Atendimento especializado em abertura de portas, abertura veicular, troca de fechaduras, chaves codificadas e reforço de segurança com acabamento profissional e resposta rápida.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                <a
+                  href={MUSTAFF_WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-amber-300 px-8 py-4 text-base font-black text-slate-950 shadow-2xl shadow-amber-500/20 transition-all duration-200 hover:bg-amber-200 hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  <MessageSquare className="h-5 w-5" />
+                  Chamar no WhatsApp
+                </a>
+                <a
+                  href={`tel:${telLink}`}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-black text-white backdrop-blur transition-all duration-200 hover:bg-white/15 hover:border-white/40"
+                >
+                  <Phone className="h-5 w-5" />
+                  {MUSTAFF_PHONE}
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 backdrop-blur">
+                  <Clock3 className="mx-auto lg:mx-0 h-5 w-5 text-amber-300" />
+                  <p className="mt-2 text-sm font-bold text-slate-100">Atendimento 24h</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 backdrop-blur">
+                  <ShieldCheck className="mx-auto lg:mx-0 h-5 w-5 text-amber-300" />
+                  <p className="mt-2 text-sm font-bold text-slate-100">Serviço técnico e seguro</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 backdrop-blur">
+                  <MapPin className="mx-auto lg:mx-0 h-5 w-5 text-amber-300" />
+                  <p className="mt-2 text-sm font-bold text-slate-100">São Paulo e região</p>
+                </div>
+              </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none text-white uppercase">
-              {niche.title} <br />
-              <span className="text-pink-400">{niche.subtitle}</span>
-            </h1>
-
-            <p className="text-base md:text-lg text-pink-100/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              {niche.description}
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mt-2">
-              <a
-                href={niche.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-pink-400 px-8 py-4 text-base font-black text-pink-950 shadow-xl shadow-pink-400/20 hover:bg-pink-300 hover:scale-[1.02] active:scale-[0.98] transition-all duration-150"
-              >
-                <MessageSquare className="h-5 w-5 fill-current" />
-                <span>CHAMAR NO WHATSAPP</span>
-              </a>
-              <a
-                href={`tel:${LABZ_PHONE.replace(/[^0-8]/g, "")}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/20 bg-white/5 px-8 py-4 text-base font-black text-white hover:bg-white/10 hover:border-white/40 transition-all duration-150"
-              >
-                <Phone className="h-5 w-5" />
-                <span>{LABZ_PHONE}</span>
-              </a>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-white/10 pt-6 mt-4">
-              <div className="flex items-center gap-3 justify-center lg:justify-start">
-                <Clock className="h-5 w-5 text-pink-400 flex-shrink-0" />
-                <span className="text-sm text-pink-100 font-semibold">Atendimento 24h</span>
-              </div>
-              <div className="flex items-center gap-3 justify-center lg:justify-start">
-                <ShieldCheck className="h-5 w-5 text-pink-400 flex-shrink-0" />
-                <span className="text-sm text-pink-100 font-semibold">Garantia e Segurança</span>
-              </div>
-              <div className="flex items-center gap-3 justify-center lg:justify-start">
-                <MapPin className="h-5 w-5 text-pink-400 flex-shrink-0" />
-                <span className="text-sm text-pink-100 font-semibold">São Paulo e Região</span>
+            <div className="lg:col-span-5">
+              <div className="relative mx-auto max-w-[520px]">
+                <div className="absolute -inset-4 rounded-[2rem] bg-amber-300/20 blur-3xl" />
+                <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 shadow-2xl backdrop-blur">
+                  <img
+                    src="/mustaff-assets/fechaduras-eletronicas-marcas.png"
+                    alt="Modelos de fechaduras eletrônicas atendidos pela Mustaff Chaveiro 24H"
+                    className="h-[360px] md:h-[520px] w-full rounded-[1.5rem] object-cover"
+                    loading="eager"
+                  />
+                  <div className="absolute left-6 right-6 bottom-6 rounded-2xl border border-white/20 bg-slate-950/82 p-4 text-left shadow-xl backdrop-blur-md">
+                    <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-300">Fechaduras eletrônicas</p>
+                    <p className="mt-1 text-sm text-slate-100">Instalação, configuração, troca e manutenção em modelos modernos.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </section>
 
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[360px] md:max-w-[400px] aspect-square flex items-center justify-center">
-              <div className="absolute inset-0 rounded-full bg-pink-400/10 blur-3xl animate-pulse"></div>
-              <div className="relative rounded-2xl border-4 border-white bg-pink-950 p-4 shadow-2xl shadow-pink-950/40 transition-transform duration-300 hover:scale-105 hover:rotate-1">
+        <section className="bg-white border-b border-slate-200">
+          <div className="container py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div className="rounded-2xl bg-slate-50 p-4 border border-slate-100">
+              <p className="text-2xl font-black text-slate-950">24h</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Plantão diário</p>
+            </div>
+            <div className="rounded-2xl bg-slate-50 p-4 border border-slate-100">
+              <p className="text-2xl font-black text-slate-950">6</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Especialidades</p>
+            </div>
+            <div className="rounded-2xl bg-slate-50 p-4 border border-slate-100">
+              <p className="text-2xl font-black text-slate-950">Sem danos</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Técnica correta</p>
+            </div>
+            <div className="rounded-2xl bg-slate-50 p-4 border border-slate-100">
+              <p className="text-2xl font-black text-slate-950">SP</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Capital e região</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="servicos" className="py-16 md:py-24 bg-[#f7f4ee]">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-amber-800">
+                <Sparkles className="h-4 w-4" />
+                Serviços profissionais de chaveiro
+              </span>
+              <h2 className="mt-5 text-3xl md:text-5xl font-black tracking-tight text-slate-950">
+                Soluções completas para acesso, fechaduras e segurança.
+              </h2>
+              <p className="mt-5 text-base md:text-lg leading-relaxed text-slate-600">
+                A landing page foi reorganizada para apresentar apenas serviços de chaveiro, com foco em urgência, clareza, confiança e conversão pelo WhatsApp.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {serviceCards.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <article
+                    key={service.title}
+                    className="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10"
+                  >
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-amber-300 via-amber-500 to-emerald-500" />
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-amber-300 shadow-lg shadow-slate-950/10 transition-transform duration-300 group-hover:scale-105">
+                        <Icon className="h-7 w-7" />
+                      </div>
+                      <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-emerald-700">
+                        {service.highlight}
+                      </span>
+                    </div>
+                    <h3 className="mt-6 text-2xl font-black tracking-tight text-slate-950">{service.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600">{service.description}</p>
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {service.items.map((item) => (
+                        <span
+                          key={item}
+                          className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-700"
+                        >
+                          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section id="fechaduras-eletronicas" className="py-16 md:py-24 bg-white">
+          <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-6">
+              <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100 shadow-xl shadow-slate-900/5">
                 <img
-                  src={niche.badgeUrl}
-                  alt={niche.title}
-                  className="w-full h-auto object-contain rounded-xl"
-                  loading="eager"
+                  src="/mustaff-assets/instalacoes-fechaduras-eletronicas.png"
+                  alt="Instalações reais de fechaduras eletrônicas realizadas em ambientes residenciais"
+                  className="h-[360px] md:h-[520px] w-full object-cover"
+                  loading="lazy"
                 />
-                <div className="absolute -bottom-4 -right-4 rounded-xl bg-pink-400 border-2 border-white px-4 py-2 text-center shadow-lg shadow-pink-400/20 rotate-3">
-                  <span className="block text-[10px] font-black uppercase tracking-widest text-pink-900 leading-none">Solução</span>
-                  <span className="block text-sm font-black text-pink-950 leading-none mt-0.5">NA HORA</span>
+              </div>
+            </div>
+            <div className="lg:col-span-6">
+              <span className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-amber-300">
+                <Settings className="h-4 w-4" />
+                Especialidade em fechaduras digitais
+              </span>
+              <h2 className="mt-6 text-3xl md:text-5xl font-black tracking-tight text-slate-950">
+                Instalação, configuração, troca e manutenção com padrão profissional.
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-slate-600">
+                A Mustaff Chaveiro 24H atende fechaduras eletrônicas de diferentes marcas e ambientes. O serviço inclui análise da porta, instalação alinhada, cadastro de acessos e orientação de uso para reduzir falhas e aumentar a segurança.
+              </p>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {["Senha, tag, biometria e aplicativo", "Ajuste de encaixe e acabamento", "Troca de modelos antigos", "Manutenção preventiva e corretiva"].map((item) => (
+                  <div key={item} className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                    <BadgeCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600" />
+                    <p className="text-sm font-bold text-slate-700">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="diferenciais" className="py-16 md:py-24 bg-slate-950 text-white">
+          <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-5">
+              <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-amber-200">
+                <ShieldCheck className="h-4 w-4" />
+                Segurança em primeiro lugar
+              </span>
+              <h2 className="mt-6 text-3xl md:text-5xl font-black tracking-tight">
+                Por que escolher a Mustaff Chaveiro 24H?
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-slate-300">
+                A proposta é entregar atendimento direto, técnico e confiável para quem precisa resolver um problema de acesso ou elevar o nível de segurança de portas e veículos.
+              </p>
+            </div>
+            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+              {differentials.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+                  <CheckCircle2 className="h-5 w-5 text-amber-300" />
+                  <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-100">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="como-funciona" className="py-16 md:py-24 bg-[#f7f4ee]">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-950">
+                Atendimento simples, rápido e transparente.
+              </h2>
+              <p className="mt-5 text-base md:text-lg text-slate-600 leading-relaxed">
+                Em emergências ou serviços programados, o processo foi pensado para reduzir espera, evitar dúvidas e garantir execução segura.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {processSteps.map((step, index) => (
+                <div key={step.title} className="relative rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-300 text-2xl font-black text-slate-950">
+                    {index + 1}
+                  </div>
+                  <h3 className="mt-6 text-xl font-black tracking-tight text-slate-950">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="atendimento" className="py-16 md:py-24 bg-white">
+          <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-6">
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-950">
+                Atendimento residencial, comercial e automotivo.
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-slate-600">
+                A Mustaff concentra sua comunicação nos serviços essenciais de chaveiro 24 horas, removendo chamadas para outros segmentos e direcionando o visitante para uma decisão rápida pelo WhatsApp.
+              </p>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                  <HomeIcon className="h-6 w-6 text-amber-600" />
+                  <p className="mt-3 font-black text-slate-950">Residências</p>
+                  <p className="mt-1 text-xs text-slate-500">Casas e apartamentos</p>
+                </div>
+                <div className="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                  <Building2 className="h-6 w-6 text-amber-600" />
+                  <p className="mt-3 font-black text-slate-950">Comércios</p>
+                  <p className="mt-1 text-xs text-slate-500">Lojas e escritórios</p>
+                </div>
+                <div className="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                  <Car className="h-6 w-6 text-amber-600" />
+                  <p className="mt-3 font-black text-slate-950">Veículos</p>
+                  <p className="mt-1 text-xs text-slate-500">Nacionais e importados</p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="servicos" className="py-16 md:py-24 bg-white">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-pink-950">
-              Serviços de chaveiro <span className="text-pink-500">especializados</span>
-            </h2>
-            <p className="text-base text-slate-600 mt-4 leading-relaxed">
-              Toda a estrutura de um chaveiro moderno: abertura residencial e automotiva, troca de fechaduras, proteção eletrônica e programação de chaves.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {niche.services.map((service, index) => (
-              <div key={index} className="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition-all duration-200 hover:shadow-lg hover:shadow-pink-950/10">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-pink-950 text-pink-400 shadow-sm">
-                  <CheckCircle className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-black uppercase tracking-tight text-pink-950">{service.title}</h3>
-                  <p className="text-sm text-slate-600 mt-2 leading-relaxed">{service.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="galeria" className="py-16 md:py-24 bg-slate-50 border-t border-slate-100">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-pink-950">
-              Galeria de <span className="text-pink-500">fechaduras e chaves</span>
-            </h2>
-            <p className="text-base text-slate-600 mt-4 leading-relaxed">
-              Veja exemplos de fechaduras eletrônicas, chaves automotivas e soluções de segurança com instalação profissional.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1581280695847-b7d1bdf0f82d?auto=format&fit=crop&w=900&q=80"
-                alt="Fechadura eletrônica instalada"
-                className="h-72 w-full object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-black text-pink-950">Fechadura eletrônica</h3>
-                <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-                  Instalação de fechaduras digitais e biométricas para portões, portas de entrada e condomínios.
-                </p>
-              </div>
-            </div>
-            <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1506470444183-8a2d4dbd7a1f?auto=format&fit=crop&w=900&q=80"
-                alt="Chave automotiva codificada"
-                className="h-72 w-full object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-black text-pink-950">Chaves automotivas</h3>
-                <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-                  Programação e cópia de chaves de carro, controle remoto e chaves codificadas com garantia.
-                </p>
+            <div className="lg:col-span-6 rounded-[2rem] bg-slate-950 p-8 text-white shadow-2xl shadow-slate-900/10">
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-amber-300">Solicite agora</p>
+              <h3 className="mt-4 text-3xl font-black tracking-tight">Precisa de chaveiro 24h?</h3>
+              <p className="mt-4 text-slate-300 leading-relaxed">
+                Envie sua localização e uma breve descrição do serviço. Se possível, encaminhe uma foto da fechadura, porta, chave ou painel do veículo para acelerar o atendimento.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={MUSTAFF_WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-1 items-center justify-center gap-3 rounded-full bg-amber-300 px-6 py-4 font-black text-slate-950 transition-colors hover:bg-amber-200"
+                >
+                  <MessageSquare className="h-5 w-5" />
+                  WhatsApp
+                </a>
+                <a
+                  href={`tel:${telLink}`}
+                  className="inline-flex flex-1 items-center justify-center gap-3 rounded-full border border-white/15 bg-white/10 px-6 py-4 font-black text-white transition-colors hover:bg-white/15"
+                >
+                  <Phone className="h-5 w-5" />
+                  Ligar agora
+                </a>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-pink-950">
-              Encontre seu serviço <span className="text-pink-500">no modal abaixo</span>
-            </h2>
-            <p className="text-base text-slate-600 mt-4 leading-relaxed">
-              Selecione o serviço desejado e veja todos os detalhes em um único lugar. Ideal para quem precisa de resposta rápida e sem complicação.
-            </p>
-          </div>
-
-          <ServicesBox />
-        </div>
-      </section>
-
-      <section id="como-funciona" className="py-16 md:py-24 bg-slate-50 border-y border-slate-100">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-pink-950">
-              Como funciona o nosso <span className="text-pink-500">atendimento</span>
-            </h2>
-            <p className="text-base text-slate-600 mt-4 leading-relaxed">
-              Criamos um processo simples e rápido para você ter atendimento imediato e solução sem dor de cabeça.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center gap-4 bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-950 font-black text-xl text-pink-400 shadow-md">
-                1
-              </div>
-              <h3 className="text-lg md:text-xl font-black uppercase tracking-tight">Chame no WhatsApp</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Mande uma mensagem com fotos ou descrição do problema e receba resposta imediata.
+        <section id="depoimentos" className="py-16 md:py-24 bg-[#f7f4ee]">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-950">Confiança para resolver o acesso com segurança.</h2>
+              <p className="mt-5 text-base text-slate-600 leading-relaxed">
+                Depoimentos exemplificam os principais cenários de atendimento: fechaduras eletrônicas, veículos e reforço de segurança.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center gap-4 bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-950 font-black text-xl text-pink-400 shadow-md">
-                2
-              </div>
-              <h3 className="text-lg md:text-xl font-black uppercase tracking-tight">Orçamento na hora</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Receba o valor do serviço com clareza e sem surpresas, diretamente pelo WhatsApp.
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center gap-4 bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-950 font-black text-xl text-pink-400 shadow-md">
-                3
-              </div>
-              <h3 className="text-lg md:text-xl font-black uppercase tracking-tight">Serviço resolvido</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                O profissional chega equipado e resolve seu problema com segurança e rapidez.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="depoimentos" className="py-16 md:py-24 bg-white">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-pink-950">
-              O que dizem nossos <span className="text-pink-500">clientes</span>
-            </h2>
-            <p className="text-base text-slate-600 mt-4 leading-relaxed">
-              Avaliações reais de quem já contratou nosso chaveiro 24h em São Paulo.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {niche.testimonials.map((testimonial, index) => (
-              <div key={index} className="flex flex-col justify-between gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-6 md:p-8">
-                <div className="flex flex-col gap-3">
-                  <div className="flex gap-1 text-pink-400">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <span key={i} className="h-3 w-3 rounded-full bg-pink-400"></span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonials.map((testimonial) => (
+                <article key={testimonial.name} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+                  <div className="flex gap-1 text-amber-400">
+                    {[...Array(5)].map((_, index) => (
+                      <Star key={index} className="h-4 w-4 fill-current" />
                     ))}
                   </div>
-                  <p className="text-sm md:text-base text-slate-700 italic leading-relaxed">"{testimonial.text}"</p>
-                </div>
-                <div className="flex items-center justify-between border-t border-slate-100 pt-4 mt-2">
-                  <span className="font-black text-sm text-pink-950 uppercase">{testimonial.name}</span>
-                  <span className="text-xs text-slate-400">{testimonial.date}</span>
-                </div>
-              </div>
-            ))}
+                  <p className="mt-5 text-sm leading-relaxed text-slate-600">“{testimonial.text}”</p>
+                  <p className="mt-6 font-black text-slate-950">{testimonial.name}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <CoverageSearch />
-
-      <section id="contato" className="relative overflow-hidden bg-gradient-to-b from-pink-950 to-pink-900 text-white py-16 md:py-24 border-t-4 border-pink-400">
-        <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
-        <div className="container relative z-10 text-center max-w-3xl">
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-none">
-            Precisa de um chaveiro <br />
-            <span className="text-pink-400">especializado agora?</span>
-          </h2>
-          <p className="text-base md:text-lg text-pink-200 mt-6 leading-relaxed">
-            Nós atendemos residências e veículos com foco em fechaduras eletrônicas, miolos, chaves codificadas e reforço de segurança.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-            <a
-              href={niche.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-pink-400 px-8 py-4 text-base font-black text-pink-950 shadow-xl shadow-pink-400/20 hover:bg-pink-300 hover:scale-105 active:scale-95 transition-all duration-150"
-            >
-              <MessageSquare className="h-5 w-5 fill-current" />
-              <span>CHAMAR NO WHATSAPP</span>
-            </a>
-            <a
-              href={`tel:${LABZ_PHONE.replace(/[^0-8]/g, "")}`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/20 bg-white/5 px-8 py-4 text-base font-black text-white hover:bg-white/10 hover:border-white/40 transition-all duration-150"
-            >
-              <Phone className="h-5 w-5" />
-              <span>LIGAR PARA {LABZ_PHONE}</span>
-            </a>
+        <section id="contato" className="relative overflow-hidden bg-slate-950 text-white py-16 md:py-24">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.18),transparent_36%)]" />
+          <div className="container relative z-10 max-w-4xl text-center">
+            <Wrench className="mx-auto h-10 w-10 text-amber-300" />
+            <h2 className="mt-6 text-3xl md:text-6xl font-black tracking-tight">
+              Mustaff Chaveiro 24H: solução rápida quando você mais precisa.
+            </h2>
+            <p className="mt-6 text-base md:text-lg text-slate-300 leading-relaxed">
+              Chame agora para abertura de portas, abertura veicular, fechaduras eletrônicas, troca de fechaduras, chaves codificadas e reforço de segurança.
+            </p>
+            <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={MUSTAFF_WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-amber-300 px-9 py-4 text-base font-black text-slate-950 shadow-xl shadow-amber-500/20 transition-all hover:bg-amber-200 hover:-translate-y-0.5"
+              >
+                <MessageSquare className="h-5 w-5" />
+                Chamar no WhatsApp
+              </a>
+              <a
+                href={`tel:${telLink}`}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-9 py-4 text-base font-black text-white transition-all hover:bg-white/15"
+              >
+                <Phone className="h-5 w-5" />
+                {MUSTAFF_PHONE}
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <Footer />
       <FloatingWhatsApp />

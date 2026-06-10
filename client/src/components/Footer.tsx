@@ -1,124 +1,89 @@
-import { ShieldCheck, Clock, MapPin, Phone, MessageSquare } from "lucide-react";
-import { LABZ_PHONE, LABZ_WHATSAPP_LINK } from "../const";
+import { KeyRound, MapPin, MessageSquare, Phone, ShieldCheck } from "lucide-react";
+import { MUSTAFF_BRAND, MUSTAFF_PHONE, MUSTAFF_WHATSAPP_LINK } from "../const";
+
+const footerServices = [
+  "Fechaduras eletrônicas",
+  "Troca de fechaduras",
+  "Abertura de portas",
+  "Abertura veicular",
+  "Chaves codificadas",
+  "Reforço de segurança",
+];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const telLink = MUSTAFF_PHONE.replace(/[^\d]/g, "");
 
   return (
-    <footer className="w-full bg-pink-950 text-white border-t border-pink-900">
-      <div className="bg-pink-400 text-pink-950 py-6">
-        <div className="container grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-          <div className="flex flex-col md:flex-row items-center gap-3 justify-center md:justify-start">
-            <div className="rounded-full bg-pink-950 p-2 text-pink-400">
-              <ShieldCheck className="h-6 w-6" />
-            </div>
-            <div>
-              <h4 className="font-black text-base uppercase leading-none">Profissionais Qualificados</h4>
-              <p className="text-xs font-semibold text-pink-900/80 mt-1">Equipe avaliada, de confiança e altamente equipada.</p>
-            </div>
+    <footer className="bg-slate-950 text-white">
+      <div className="border-b border-white/10 bg-amber-300 text-slate-950">
+        <div className="container grid grid-cols-1 md:grid-cols-3 gap-5 py-6">
+          <div className="flex items-center gap-3">
+            <ShieldCheck className="h-6 w-6" />
+            <p className="text-sm font-black uppercase tracking-wide">Chaveiro 24 horas</p>
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-3 justify-center md:justify-start">
-            <div className="rounded-full bg-pink-950 p-2 text-pink-400">
-              <Clock className="h-6 w-6" />
-            </div>
-            <div>
-              <h4 className="font-black text-base uppercase leading-none">Atendimento Rápido 24h</h4>
-              <p className="text-xs font-semibold text-pink-900/80 mt-1">Sempre prontos para te atender de dia ou de noite.</p>
-            </div>
+          <div className="flex items-center gap-3">
+            <KeyRound className="h-6 w-6" />
+            <p className="text-sm font-black uppercase tracking-wide">Especialista em fechaduras e chaves</p>
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-3 justify-center md:justify-start">
-            <div className="rounded-full bg-pink-950 p-2 text-pink-400">
-              <MapPin className="h-6 w-6" />
-            </div>
-            <div>
-              <h4 className="font-black text-base uppercase leading-none">São Paulo e Região</h4>
-              <p className="text-xs font-semibold text-pink-900/80 mt-1">Cobertura completa na capital e região metropolitana.</p>
-            </div>
+          <div className="flex items-center gap-3">
+            <MapPin className="h-6 w-6" />
+            <p className="text-sm font-black uppercase tracking-wide">São Paulo e região metropolitana</p>
           </div>
         </div>
       </div>
 
-      <div className="container py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-400 font-black text-pink-950">
-              <span className="text-xl tracking-tighter">LZ</span>
+      <div className="container py-12 grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div>
+          <div className="flex items-center gap-3">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-300 text-slate-950">
+              <KeyRound className="h-6 w-6" />
             </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-black tracking-tight text-white leading-none">
-                LABZ<span className="text-pink-400">SERVIÇOS</span>
-              </span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-pink-400/80 leading-none mt-0.5">
-                Chaveiro 24h
-              </span>
+            <div>
+              <p className="text-xl font-black leading-none">Mustaff</p>
+              <p className="mt-1 text-[11px] font-black uppercase tracking-[0.24em] text-amber-300">Chaveiro 24H</p>
             </div>
           </div>
-          <p className="text-sm text-pink-200 leading-relaxed">
-            Chaveiro especializado em fechaduras eletrônicas, troca de miolos, chaves automotivas e abertura residencial com atendimento imediato.
+          <p className="mt-5 text-sm leading-relaxed text-slate-300">
+            {MUSTAFF_BRAND} oferece atendimento profissional para abertura de portas, abertura veicular, fechaduras eletrônicas, troca de fechaduras, chaves codificadas e reforço de segurança.
           </p>
         </div>
 
-        <div className="flex flex-col gap-4">
-          <h4 className="text-base font-black uppercase tracking-wider text-pink-400">Navegação</h4>
-          <ul className="grid grid-cols-1 gap-2 text-sm text-pink-200">
-            <li>
-              <a href="#servicos" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-pink-400"></span>
-                Serviços
-              </a>
-            </li>
-            <li>
-              <a href="#galeria" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-pink-400"></span>
-                Galeria
-              </a>
-            </li>
-            <li>
-              <a href="#como-funciona" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-pink-400"></span>
-                Como Funciona
-              </a>
-            </li>
-            <li>
-              <a href="#contato" className="hover:text-pink-400 transition-colors duration-150 flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-pink-400"></span>
-                Contato
-              </a>
-            </li>
+        <div>
+          <h4 className="text-sm font-black uppercase tracking-[0.2em] text-amber-300">Serviços</h4>
+          <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-300">
+            {footerServices.map((service) => (
+              <li key={service} className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
+                {service}
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className="flex flex-col gap-4">
-          <h4 className="text-base font-black uppercase tracking-wider text-pink-400">Fale Conosco</h4>
-          <div className="flex flex-col gap-3 text-sm text-pink-200">
-            <a
-              href={LABZ_WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-pink-400 transition-colors duration-150"
-            >
-              <MessageSquare className="h-4 w-4 text-pink-400" />
-              <span>Chamar no WhatsApp</span>
+        <div>
+          <h4 className="text-sm font-black uppercase tracking-[0.2em] text-amber-300">Contato imediato</h4>
+          <div className="mt-5 flex flex-col gap-3 text-sm text-slate-300">
+            <a href={MUSTAFF_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 transition-colors hover:text-amber-300">
+              <MessageSquare className="h-4 w-4 text-amber-300" />
+              Chamar no WhatsApp
             </a>
-            <a
-              href={`tel:${LABZ_PHONE.replace(/[^0-8]/g, "")}`}
-              className="flex items-center gap-2 hover:text-pink-400 transition-colors duration-150"
-            >
-              <Phone className="h-4 w-4 text-pink-400" />
-              <span>{LABZ_PHONE}</span>
+            <a href={`tel:${telLink}`} className="flex items-center gap-3 transition-colors hover:text-amber-300">
+              <Phone className="h-4 w-4 text-amber-300" />
+              {MUSTAFF_PHONE}
             </a>
-            <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-pink-400" />
-              <span>São Paulo e Região Metropolitana</span>
+            <div className="flex items-center gap-3">
+              <MapPin className="h-4 w-4 text-amber-300" />
+              São Paulo e região metropolitana
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-pink-950 border-t border-pink-900/60 py-6 text-center text-xs text-blue-300">
-        <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {currentYear} LabzServiços 24 Horas. Todos os direitos reservados.</p>
-          <p className="text-[10px] text-blue-400">Chaveiro especializado em porta e carro com atendimento 24h.</p>
+      <div className="border-t border-white/10 py-6">
+        <div className="container flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+          <p>© {currentYear} {MUSTAFF_BRAND}. Todos os direitos reservados.</p>
+          <p>Landing page focada exclusivamente em serviços de chaveiro 24h.</p>
         </div>
       </div>
     </footer>

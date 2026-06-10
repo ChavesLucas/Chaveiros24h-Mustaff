@@ -30,92 +30,72 @@ export interface NicheData {
   testimonials: TestimonialItem[];
 }
 
-export const LABZ_PHONE = "(11) 94175-7511";
-export const LABZ_WHATSAPP_LINK = "https://wa.me/5511941757511?text=Ol%C3%A1%21%20Preciso%20de%20um%20atendimento%20da%20LabzServi%C3%A7os%2024h.";
+export const MUSTAFF_BRAND = "Mustaff Chaveiro 24H";
+export const MUSTAFF_PHONE = "(11) 94175-7511";
+export const MUSTAFF_WHATSAPP_LINK =
+  "https://wa.me/5511941757511?text=Ol%C3%A1%2C%20preciso%20de%20um%20atendimento%20da%20Mustaff%20Chaveiro%2024H.";
+
 
 export const NICHES: Record<string, NicheData> = {
   "chaveiro-24h": {
     id: "chaveiro-24h",
-    title: "Chaveiro 24 Horas",
-    subtitle: "Fechaduras eletrônicas, chaves automotivas e abertura residencial",
+    title: MUSTAFF_BRAND,
+    subtitle: "Chaveiro 24 horas especializado",
     description:
-      "Atendimento urgente em São Paulo e região para abertura de portas, veículos, troca de fechaduras e serviços de segurança com foco em fechaduras eletrônicas e chaves codificadas.",
+      "Atendimento 24h para abertura de portas, abertura veicular, troca de fechaduras, fechaduras eletrônicas, chaves codificadas e reforço de segurança em São Paulo e região.",
     metaDescription:
-      "Chaveiro 24 horas em São Paulo especializado em fechaduras eletrônicas, chaves automotivas, troca de fechaduras e abertura de portas. Atendimento rápido e seguro.",
+      "Mustaff Chaveiro 24H: chaveiro profissional para fechaduras eletrônicas, abertura de portas, abertura veicular, chaves codificadas e reforço de segurança.",
     badgeUrl: "/manus-storage/01_chaveiro_24h_badge_096977f7.webp",
-    phone: LABZ_PHONE,
-    whatsappUrl:
-      "https://wa.me/5511941757511?text=Ol%C3%A1%21%20Preciso%20de%20um%20chaveiro%20especializado%20em%20fechaduras%20eletr%C3%B4nicas%20e%20chaves%20automotivas.",
+    phone: MUSTAFF_PHONE,
+    whatsappUrl: MUSTAFF_WHATSAPP_LINK,
     services: [
       {
-        title: "Abertura de portas e troca de miolos",
-        description:
-          "Abrimos portas residenciais e comerciais sem danificar a fechadura, com troca de miolos no mesmo atendimento quando necessário.",
+        title: "Fechaduras Eletrônicas",
+        description: "Instalação, configuração, troca e manutenção de fechaduras digitais, biométricas e smart locks.",
       },
       {
-        title: "Abertura de veículos",
-        description:
-          "Abertura de carros e motos sem danos, incluindo veículos com sistemas modernos e travas eletrônicas.",
+        title: "Troca de Fechaduras",
+        description: "Troca de fechaduras residenciais, comerciais e de alta segurança com orientação técnica.",
       },
       {
-        title: "Troca de fechaduras",
-        description:
-          "Foco total em troca de fechaduras comuns e de alta segurança, com instalação rápida e recomendação por tipo de porta.",
+        title: "Abertura de Portas",
+        description: "Abertura de casas, apartamentos e escritórios com técnica e prioridade para não danificar.",
       },
       {
-        title: "Fechaduras eletrônicas",
-        description:
-          "Instalação, manutenção e configuração de fechaduras digitais, biométricas e smart locks para residências e condomínios.",
+        title: "Abertura Veicular",
+        description: "Abertura de carros nacionais e importados, executada com cuidado para preservar o veículo.",
       },
       {
-        title: "Chaves codificadas",
-        description:
-          "Cópia, programação de transponders, chaves telecomando e chaves presenciais para carros e portas eletrônicas.",
+        title: "Chaves Codificadas",
+        description: "Programação, cópias e chaves presenciais para necessidades automotivas e sistemas modernos.",
       },
       {
-        title: "Reforço de segurança",
-        description:
-          "Instalação de travas, cilindros especiais, trincos e dispositivos de proteção para aumentar a segurança da sua porta.",
+        title: "Reforço de Segurança",
+        description: "Troca de cilindros, instalação de travas extras e fechaduras de alta segurança.",
       },
     ],
     faqs: [
       {
-        question: "Vocês atendem emergências de madrugada?",
-        answer:
-          "Sim. Nosso chaveiro 24h atende de madrugada, domingos e feriados em toda a capital e região metropolitana.",
+        question: "A Mustaff atende 24 horas?",
+        answer: "Sim. O atendimento é 24 horas para emergências residenciais, comerciais e automotivas.",
       },
       {
-        question: "Trocam fechaduras eletrônicas e miolos no mesmo atendimento?",
+        question: "Vocês trabalham com fechaduras eletrônicas?",
         answer:
-          "Sim. Levamos peças, digitais e miolos compatíveis para resolver o problema na hora, sem precisar de nova visita.",
+          "Sim. A Mustaff realiza instalação, configuração, troca e manutenção de fechaduras eletrônicas de diferentes marcas.",
       },
       {
-        question: "Fazem chaves codificadas e cópias de controle remoto?",
+        question: "A abertura é feita sem danos?",
         answer:
-          "Fazemos chaves codificadas, chaves automotivas, controle remoto e chaves simples para portas residenciais e comerciais.",
+          "O atendimento prioriza técnicas sem dano sempre que o estado da fechadura, porta ou veículo permite esse procedimento com segurança.",
       },
     ],
     testimonials: [
       {
-        name: "Claudio Souza",
+        name: "Cliente Mustaff",
         rating: 5,
-        text:
-          "Excelente serviço! Chegaram rápido e trocaram a fechadura eletrônica do meu apartamento sem complicação.",
-        date: "Há 1 semana",
-      },
-      {
-        name: "Renata Martins",
-        rating: 5,
-        text:
-          "Meu carro não abria e o chaveiro abriu na hora. Tiraram a programação da chave e fizeram um novo comando.",
-        date: "Há 2 semanas",
-      },
-      {
-        name: "Thiago Oliveira",
-        rating: 5,
-        text:
-          "O foco na troca de fechadura foi ótimo. Instalaram um modelo eletrônico novo e deixaram tudo funcionando perfeitamente.",
-        date: "Há 1 mês",
+        text: "Atendimento rápido e muito profissional para instalação de fechadura eletrônica.",
+        date: "Avaliação recente",
       },
     ],
   },

@@ -43,44 +43,39 @@
 }
 
 :root {
-  /* LABZ Theme Colors (Dynamic Comic-Sticker) */
-  --primary: oklch(0.35 0.23 350); /* Rosa profundo */
-  --primary-foreground: oklch(0.98 0.01 350);
-  
-  --radius: 1rem; /* Cantos arredondados heróicos/esportivos */
-  
-  --background: oklch(0.99 0.003 240); /* Branco gelo */
-  --foreground: oklch(0.15 0.03 350); /* Rosa escuro para textos */
-  
+  --primary: oklch(0.22 0.035 255);
+  --primary-foreground: oklch(0.99 0.01 95);
+  --radius: 1rem;
+  --background: oklch(0.98 0.018 86);
+  --foreground: oklch(0.17 0.026 255);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.03 350);
-  
+  --card-foreground: oklch(0.17 0.026 255);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.03 350);
-  
-  --secondary: oklch(0.85 0.18 350); /* Rosa vibrante */
-  --secondary-foreground: oklch(0.15 0.03 350);
-  
-  --muted: oklch(0.96 0.005 240);
-  --muted-foreground: oklch(0.45 0.02 350);
-  
-  --accent: oklch(0.85 0.18 350);
-  --accent-foreground: oklch(0.15 0.03 350);
-  
+  --popover-foreground: oklch(0.17 0.026 255);
+  --secondary: oklch(0.87 0.15 88);
+  --secondary-foreground: oklch(0.17 0.026 255);
+  --muted: oklch(0.96 0.009 255);
+  --muted-foreground: oklch(0.45 0.025 255);
+  --accent: oklch(0.87 0.15 88);
+  --accent-foreground: oklch(0.17 0.026 255);
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
-  
-  --border: oklch(0.92 0.005 240);
-  --input: oklch(0.92 0.005 240);
-  --ring: oklch(0.85 0.18 350);
+  --border: oklch(0.91 0.012 255);
+  --input: oklch(0.91 0.012 255);
+  --ring: oklch(0.76 0.16 85);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
